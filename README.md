@@ -68,7 +68,7 @@ The problem asks for the function to unpack the list into three variables, in wh
 
 A demonstration of extended sequence unpacking is as followed:
 ```python
-a, *b, c = (1, 2, 3, 4)
+a, *b, c = [1, 2, 3, 4]
 ```
 The contents of `a`, `*b`, and `c` would be `a = 1`, `*b = (2, 3)`, `c = 4`, respectively. In terms of the three given variables by the problem, the elements would be allocated like this:
 - `first`- assigns the beginning element into the `first` variable.
