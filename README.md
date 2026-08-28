@@ -1,10 +1,9 @@
 # **ECE2112: Programming Assessment 1**
 **Submitted by: Jazmine Mikaela L. Rafols | 2ECE-D**   
 **Submitted on: August 27, 2026**
- ### **Objectives of the Experiment**
+## **Objectives of the Experiment**
 > Upon accomplishing Programming Assessment 1, the student should be able to demonstrate the utilization of basic Python functions, operators, and string operations and manipulate these strings through indexing, slicing, and built-in string methods, as well as the application of sequence unpacking to manipulate elements of a list. The use of Python functions and the given methods are used to return an instructed and expected result.
-### **A. Word Rotation Problem**
----
+## **A. Word Rotation Problem**
 > **Instruction:** Create a function that moves the first character of the string to the end while keeping all remaining characters in their original order and preserving the capitalization of every character. 
 
 Upon approaching the problem, part of its solution requires a method that is able to manipulate a character in a string. In Python, there is an existing operation that allows the access to a specific element within an iterable sequence, referred to as **indexing**. 
@@ -29,6 +28,7 @@ print(text[1:])
 ```
 As aforementioned, `[1]` would be "o" and applying the slice operation on the index value `[1]` would mean, "Every value starting from `[1]`", which is "o" until "e". The corresponding output would be: `ode`.
 
+### Solution to the Problem
 Considering that the operations required to execute the function are now identified, the function `rotate_word(text)` for word rotation can now be defined as:
 ```python
 def rotate_word(text):
@@ -37,8 +37,8 @@ def rotate_word(text):
 ```
 Under this function, the variable `new_word` will manipulate the initial variable `text` using the slice operation starting from index `[1]` to isolate the characters following the first element, then index `[0]`, the first character, will be reconnected through concatenation `+` at the end of string. Referencing from the previous two examples, if `text = "Code"`, then rotate_word(text) would return as: `odeC`.
 
-### B. Username Builder Problem
 ---
+## B. Username Builder Problem
 > **Instruction:** Create a function that accepts two strings: first_name and last_name. The function must be able to convert all letter to lowercase, remove spaces from the first_name and last_name strings, and join the processed strings using one period. 
 
 The function asks for the two strings, `first_name` and `last_name`, to be attached through a period `.` while having the strings converted to lowercase and have the spaces removed in between.
@@ -52,16 +52,19 @@ This code would return `mango` as its output. Additionally, the string method `r
 ```python
 fruit.lower().replace(" ","") #fruit as an example
 ```
-The quotation marks `" "` with the empty space signifies the space in the strings and the following marks means it will replace every space featured with `""`, essentially removing that space.
+The quotation marks `" "` with the empty space signifies the space in the strings and the following marks means it will replace every space featured with `""`, essentially removing that space. To complete the function, the period can be concatenated as so: `+ "."`, following the variable. 
 
-To complete the function, the period can be concatenated as so: `+ "."`, following the variable. The final function `make_username(first_name, last_name)` can now be defined as:
+### Solution to the Problem
+The final function `make_username(first_name, last_name)` can now be defined as:
 ```python
 def make_username(first_name, last_name):
     username = first_name.lower().replace(" ", "") + "." + last_name.lower().replace(" ", "")
     return username
 ```
-### C. Bookend Swap Problem
+When given a string for its two variables, for example, `"Ana Maria"` and `"De Leon"`, the variable `username` will apply the above-mentioned syntax that will firstly transform `"Ana Maria"` into lowercase, then replace the spaces within its `first_name` string. This is to be concatenated with a period `"."`, then the same operation will be applied to `"De Leon"` as its `last_name` string. The returned username would be: `anamaria.deleon`.
+
 ---
+## C. Bookend Swap Problem
 > **Instruction:** Create a function named `swap_bookends()` that accepts a list containing at least two elements. This function should unpack the list into three variables: `first`, `middle`, and `last`. Using these variables, return a new list in which the first and last elements have exchanged positions while the elements in the middle must remain in their original order. 
 
 The problem asks for the function to unpack the list into three variables, in which it can be done through the method of **extended sequence unpacking**. This method is done through the use of the asterisk `*` prefix, allowing a variable to capture or store multiple elements from an iterable sequence into a list of its own. As for this, the instructions have required the use of extended sequence unpacking in the following form: `first, *middle, last = items`.
@@ -75,18 +78,22 @@ The contents of `a`, `*b`, and `c` would be `a = 1`, `*b = (2, 3)`, `c = 4`, res
 - `*middle` - stores the elements in between the first and last element.
 - `last` - assigns the ending element into the `last` variable.
 
-Furthermore, the requirement of exchanging the positions of the `first` and `last` variables can be done through rewriting their order through the `return` feature of the defined function into: `last, *middle, first`.
+Furthermore, the requirement of exchanging the positions of the `first` and `last` variables can be done through rewriting their order through the `return` feature of the defined function into: `last, *middle, first`. Through utilizing this method of assigning variables, it allows a non-mutating function to be executed that retains the elements original placements after returning a new list. 
 
-Utilizing this method of assigning variables allows a non-mutating function to be executed and retains the elements original placements after returning a new list. Thus, the final function `swap_bookends(items)` is as shown below:
+### Solution to the Problem
+Thus, the final function `swap_bookends(items)` is as shown below:
 ```python
 def swap_bookends(items):
     first, *middle, last = items
     return [last, *middle, first]
 ```
+This function, when given a list of at least two elements such as: `items = ["red", "green", "blue"]`, will assign `red` to the `first` variable, `green` to the `*middle` variable, and `blue` to the `last` variable, respectively. Upon receiving the list of items, it will return the output with the `first` and `last` variables swapped. With this, the returned output would be: `["blue", "green", "red"]`.
+
 ---
 ### Thank you for Reading!
 To view the complete program for Programming Assessment 1, refer to this link: [Programming Assessment 1 by Jazmine Rafols](https://github.com/Jazmine-Rafols/RAFOLS_ECE2112/blob/8de3d6d3f74398ca4cd62fba70f4adb134ff2605/RAFOLS_Programming_Assessment-1.ipynb)
 ### File Version History
 **August 26, 2026** - Initial README file uploaded in GitHub. \
 **August 27, 2026** - File reupload. \
-**August 28, 2026** - Rewritten the format of README file for better readability.
+**August 28, 2026** - Rewritten the format of README file for better readability. \
+**August 29, 2026** - Fixed headers of the README file.
