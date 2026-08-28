@@ -54,7 +54,7 @@ fruit.lower().replace(" ","") #fruit as an example
 ```
 The quotation marks `" "` with the empty space signifies the space in the strings and the following marks means it will replace every space featured with `""`, essentially removing that space.
 
-To complete the function, the period can be concatenated as so: `+ "."` following the variable. The final function `make_username(first_name, last_name)` can now be defined as:
+To complete the function, the period can be concatenated as so: `+ "."`, following the variable. The final function `make_username(first_name, last_name)` can now be defined as:
 ```python
 def make_username(first_name, last_name):
     username = first_name.lower().replace(" ", "") + "." + last_name.lower().replace(" ", "")
@@ -77,7 +77,7 @@ The contents of `a`, `*b`, and `c` would be `a = 1`, `*b = (2, 3)`, `c = 4`, res
 
 Furthermore, the requirement of exchanging the positions of the `first` and `last` variables can be done through rewriting their order through the `return` feature of the defined function into: `last, *middle, first`.
 
-Utilizing this method would allow the elements in the middle to be retained in their original order whilst assigning variables allows a non-mutating function to be executed and retains the elements original placements after returning a new list. Thus, the final function `swap_bookends(items)` is as shown below:
+Utilizing this method of assigning variables allows a non-mutating function to be executed and retains the elements original placements after returning a new list. Thus, the final function `swap_bookends(items)` is as shown below:
 ```python
 def swap_bookends(items):
     first, *middle, last = items
